@@ -6,4 +6,6 @@ class User < ApplicationRecord
   has_many :events, through: :user_events
   has_many :user_artists
   has_many :artists, through: :user_artists
+
+  
 end
