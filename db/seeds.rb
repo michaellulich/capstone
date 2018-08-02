@@ -16,9 +16,9 @@ User.create(name:"Bob", email:"bob@email.com", password:"password")
 User.create(name:"Doug", email:"doug@email.com", password:"password")
 User.create(name:"Anthony", email:"anthony@email.com", password:"password")
 
-Event.create(address:"2338 N Milwaukee Ave, Chicago, IL 60647", name:"Cole's Bar",time: 3.days.from_now, description:"live music")
-Event.create(address:"3425 W Fullerton Ave, Chicago, IL 60647", name:"Burlington Bar",time: 3.days.from_now, description:"backroom live acts")
-Event.create(address:"1354 W Wabansia Ave, Chicago, IL 60642", name:"The Hideout",time: 3.days.from_now, description:"porch session")
+Event.create(address:"2338 N Milwaukee Ave, Chicago, IL 60647", name:"Cole's Bar",time: 3.days.from_now, description:"live music", artist_id: 1)
+Event.create(address:"3425 W Fullerton Ave, Chicago, IL 60647", name:"Burlington Bar",time: 3.days.from_now, description:"backroom live acts", artist_id: 3)
+Event.create(address:"1354 W Wabansia Ave, Chicago, IL 60642", name:"The Hideout",time: 3.days.from_now, description:"porch session", artist_id: 4)
 
 ArtistEvent.create(artist_id:1, event_id:1)
 ArtistEvent.create(artist_id:2, event_id: 1)

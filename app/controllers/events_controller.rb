@@ -1,4 +1,14 @@
 class EventsController < ApplicationController
+  before_action :authenticate_artist
+  
+  # if current_artist
+  #   @events = current_artist.events
+  #   render "index.json.jbuilder"
+  # else
+  #   render json: []
+  # end
+
+
   def index
     @events = Event.all
     render "index.json.jbuilder"
@@ -10,12 +20,14 @@ class EventsController < ApplicationController
     render "show.json.jbuilder"
   end
 
+
   def create 
     @event = Event.new(
       address: params[:address],
       name: params[:name],
       time: params[:time],
-      description: params[:description]
+      description: params[:description],
+      artist_id: current_artist.id
       )
     if @event.save
       render "show.json.jbuilder"

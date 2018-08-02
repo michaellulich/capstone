@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :null_session
 
+#USER AUTH
   def current_user
     if request.headers['Authorization'].present?
       token = request.headers['Authorization'].split(' ').last
@@ -22,6 +23,34 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user
     unless current_user
+      render json: {}, status: :unauthorized
+    end
+  end
+
+
+#ARTIST AUTH
+
+  def current_artist
+    if request.headers['Authorization'].present?
+      token = request.headers['Authorization'].split(' ').last
+      begin
+          decoded_token = JWT.decode(
+            token,
+            Rails.application.credentials.fetch(:secret_key_base),
+            true,
+            { algorithm: 'HS256' }
+          )
+          Artist.find_by(id: decoded_token[0]["artist"])
+        rescue JWT::ExpiredSignature
+          nil
+        end
+    end
+  end
+
+  helper_method :current_artist
+
+  def authenticate_artist
+    unless current_artist
       render json: {}, status: :unauthorized
     end
   end

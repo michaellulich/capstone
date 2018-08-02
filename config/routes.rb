@@ -20,4 +20,8 @@ Rails.application.routes.draw do
 
   #sessions routes
   post "/sessions" => "sessions#create"
+  post "/artist_sessions" => "sessions#artist_session_create"
+
+  #artist routes
+  post "/artists" => "artists#create"
 end
