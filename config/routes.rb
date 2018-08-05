@@ -24,4 +24,10 @@ Rails.application.routes.draw do
 
   #artist routes
   post "/artists" => "artists#create"
+  get "/artists/:id" => "artists#show"
+
+  #user_events routes
+  get "user_events/:id" => "user_events#show"
+  #user_artist routes
+  post "/user_artists" => "user_artists#create"
 end

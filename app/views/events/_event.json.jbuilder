@@ -8,7 +8,6 @@ json.artists event.artists.each do |artist|
   json.name artist.name
   json.genre artist.genre
 end
-json.users event.users.each do |user|
-  json.id user.id
-  json.name user.name
-end
+
+
+json.favorited (current_user.user_events.map { |user_event| user_event.event_id}.include? event.id) if current_user

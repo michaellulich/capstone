@@ -24,6 +24,7 @@ ArtistEvent.create(artist_id:1, event_id:1)
 ArtistEvent.create(artist_id:2, event_id: 1)
 ArtistEvent.create(artist_id:3, event_id: 2)
 ArtistEvent.create(artist_id:4, event_id: 3)
+ArtistEvent.create(artist_id:1, event_id:3)
 
 UserArtist.create(user_id:1, artist_id:1)
 UserArtist.create(user_id:1, artist_id:2)

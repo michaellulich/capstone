@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_artist
+  before_action :authenticate_artist, except: [:index]
   
   # if current_artist
   #   @events = current_artist.events
@@ -19,7 +19,6 @@ class EventsController < ApplicationController
     @event = Event.find_by(id: id_input)
     render "show.json.jbuilder"
   end
-
 
   def create 
     @event = Event.new(
