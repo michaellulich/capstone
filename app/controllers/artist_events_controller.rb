@@ -1,5 +1,5 @@
 class ArtistEventsController < ApplicationController
-  before_action :authenticate_artist
+  # before_action :authenticate_artist
   def index
     @artist_events = ArtistEvent.all
     render "index.json.jbuilder"
