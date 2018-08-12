@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  before_action :authenticate_artist
+  # before_action :authenticate_artist
 
   def show
     if params[:id].to_s == current_artist.id.to_s

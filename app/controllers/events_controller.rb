@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_artist, except: [:index]
+  before_action :authenticate_artist, except: [:index, :show]
   
   # if current_artist
   #   @events = current_artist.events
@@ -29,6 +29,10 @@ class EventsController < ApplicationController
       artist_id: current_artist.id
       )
     if @event.save
+      ArtistEvent.create(
+        event_id: @event.id,
+        artist_id: current_artist.id
+        )
       render "show.json.jbuilder"
     else
       render json: {errors: @event.errors.full_messages},
