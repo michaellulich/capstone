@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # before_action :authenticate_user
   def create
     user = User.new(
       name: params[:name],
@@ -11,5 +12,10 @@ class UsersController < ApplicationController
     else
       render json: {errors: user.errors.full_messages}, status: :bad_request
     end
+  end
+
+  def show
+    @user = User.find_by(id: params['id'])
+    render "show.json.jbuilder"
   end
 end

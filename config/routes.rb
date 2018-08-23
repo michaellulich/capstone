@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   # users routes
   post "/users" => "users#create"
+  get "/users/:id" => "users#show"
 
   #sessions routes
   post "/sessions" => "sessions#create"
@@ -27,7 +28,16 @@ Rails.application.routes.draw do
   get "/artists/:id" => "artists#show"
 
   #user_events routes
+  get "/user_events" => "user_events#index"
   get "user_events/:id" => "user_events#show"
+  post "user_events" => "user_events#create"
+  delete "user_events/:id" =>
+   "user_events#destroy"
+
   #user_artist routes
   post "/user_artists" => "user_artists#create"
+
+  #SPOTIFY
+  get "/spotify_authorize" => "spotify#authorize"
+  get "/spotify/callback" => "spotify#callback"
 end
