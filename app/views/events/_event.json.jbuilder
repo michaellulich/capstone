@@ -7,6 +7,8 @@ json.artists event.artists.each do |artist|
   json.id artist.id
   json.name artist.name
   json.genre artist.genre
+  json.spotifyId nil
+  json.spotifyTrackId nil
 end
 
 # json.favorited current_user.events.include? event

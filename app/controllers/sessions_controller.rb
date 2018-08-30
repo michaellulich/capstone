@@ -14,7 +14,17 @@ class SessionsController < ApplicationController
     else
       render json: {}, status: :unauthorized
     end
-  end  
+  end
+
+  def show
+    user = User.find_by(email: params[:email])
+    if user && user.authenticate(params[:password])
+      render "show.json.jbuilder"
+    else
+      render json: {message: "didn't work"}
+    end
+  end
+ 
 
   def artist_session_create
     artist = Artist.find_by(email: params[:email])

@@ -18,10 +18,12 @@ Rails.application.routes.draw do
   # users routes
   post "/users" => "users#create"
   get "/users/:id" => "users#show"
+  get "/usersprofile/" => "users#profile"
 
   #sessions routes
   post "/sessions" => "sessions#create"
   post "/artist_sessions" => "sessions#artist_session_create"
+  get "/sessions/:id" => "sessions#show"
 
   #artist routes
   post "/artists" => "artists#create"
@@ -39,5 +41,5 @@ Rails.application.routes.draw do
 
   #SPOTIFY
   get "/spotify_authorize" => "spotify#authorize"
-  get "/spotify/callback" => "spotify#callback"
+  get "/spotify/callback/" => "spotify#callback"
 end
