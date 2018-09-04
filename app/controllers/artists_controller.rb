@@ -2,12 +2,12 @@ class ArtistsController < ApplicationController
   # before_action :authenticate_artist
 
   def show
-    if params[:id].to_s == current_artist.id.to_s
-      @artist = Artist.find_by(id: params[:id])
-      render "show.json.jbuilder"
-    else
-      render json: {}, status: :unauthorized
-    end
+    # if params[:id].to_s == current_artist.id.to_s
+    @artist = Artist.find_by(id: params[:id])
+    render "show.json.jbuilder"
+    # else
+    #   render json: {}, status: :unauthorized
+    # end
   end
 
   def create
