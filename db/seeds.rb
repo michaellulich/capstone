@@ -14,6 +14,8 @@ Artist.create(name:"Fire Toolz", email:"firetoolz@email.com", genre:"experimenta
 Artist.create(name:"Ne-hi", email:"ne-hi@email.com", genre:"rock", password:"password")
 Artist.create(name:"Twin Peaks", email:"twinpeaks@email.com", genre:"rock", password:"password")
 Artist.create(name:"Bitchin Bajas", email:"bitchinbajas@email.com", genre:"jazz", password:"password")
+Artist.create(name:"George Clanton", email:"georgeclanton@email.com", genre:"vaporwave", password:"password")
+Artist.create(name:"Rp Boo", email:"rpboo@email.com", genre:"FootWork", password:"password")
 
 Image.create(src:"http://www.thecompmagazine.com/wp-content/uploads/2016/08/Dehd-1.jpg", artist_id:1)
 Image.create(src:"http://www.thecompmagazine.com/wp-content/uploads/2016/08/Dehd-4.jpg", artist_id:1)
@@ -48,6 +50,14 @@ Image.create(src:"http://www.dragcity.com/uploads/artists/397/photos/399/large_B
 Image.create(src:"https://adhoc_bucket.s3.amazonaws.com/cache/images/BItchin_Bajas_by_Allison_Taich_medium_image.jpg", artist_id:8)
 Image.create(src:"http://www.cafeoto.co.uk/media/thumbnails/uploads/bitchinbajas-byjeremiahchiu-01_page_image.jpg", artist_id:8)
 
+Image.create(src:"https://images.sk-static.com/images/media/profile_images/artists/8629774/huge_avatar",artist_id:9)
+Image.create(src:"https://pbs.twimg.com/profile_images/973993203660550144/wSJGtYrY_400x400.jpg",artist_id:9)
+Image.create(src:"https://photos.bandsintown.com/thumb/7384569.jpeg",artist_id:9)
+
+Image.create(src:"http://cdn4.planet.mu/wp-content/uploads/2016/03/RP-Boo-2-2015-by-Wills-Glasspiegel-650x433.jpg", artist_id:10)
+Image.create(src:"http://cdn4.planet.mu/wp-content/uploads/2016/03/RP-Boo-2015-by-Wills-Glasspiegel-650x383.jpg", artist_id:10)
+Image.create(src:"https://media.pitchfork.com/photos/592993c0c0084474cd0beb65/1:1/w_300/6961c4a7.jpg", artist_id:10)
+
 
 User.create(name:"Mike", email:"mike@email.com", password:"password")
 User.create(name:"Bob", email:"bob@email.com", password:"password")
@@ -56,12 +66,15 @@ User.create(name:"Anthony", email:"anthony@email.com", password:"password")
 
 Event.create(address:"2338 N Milwaukee Ave, Chicago, IL 60647", name:"Cole's Bar",time: 3.days.from_now, description:"live music", artist_id: 1)
 Event.create(address:"3425 W Fullerton Ave, Chicago, IL 60647", name:"Burlington Bar",time: 3.days.from_now, description:"Live music in the backroom", artist_id: 3)
-Event.create(address:"1354 W Wabansia Ave, Chicago, IL 60642", name:"The Hideout",time: 3.days.from_now, description:"front porch live", artist_id: 4)
-Event.create(address:"3734 W Belmont Ave, Chicago, IL 60618", name:"Sleeping Village",time: 3.days.from_now, description:"Record Release", artist_id: 5)
-Event.create(address:"3111 N Western Ave, Chicago, IL 60618", name:"Constellation",time: 3.days.from_now, description:"front porch live", artist_id: 6)
-Event.create(address:"3219-21 S Morgan St, Chicago, IL 60607", name:"Co-Prosperity Sphere",time: 3.days.from_now, description:"front porch live", artist_id: 7)
-Event.create(address:"4802 N Broadway St, Chicago, IL 60640", name:"The Green Mill",time: 3.days.from_now, description:"front porch live", artist_id: 8)
-Event.create(address:"2042 W 21st St; Chicago, Illinois 60608", name:"Eco",time: 3.days.from_now, description:"front porch live", artist_id: 2)
+Event.create(address:"1354 W Wabansia Ave, Chicago, IL 60642", name:"The Hideout",time: 3.days.from_now, description:"Record Release", artist_id: 4)
+Event.create(address:"3734 W Belmont Ave, Chicago, IL 60618", name:"Sleeping Village",time: 3.days.from_now, description:"Cool music!", artist_id: 5)
+Event.create(address:"3111 N Western Ave, Chicago, IL 60618", name:"Constellation",time: 3.days.from_now, description:"Improvisation", artist_id: 6)
+Event.create(address:"3219-21 S Morgan St, Chicago, IL 60607", name:"Co-Prosperity Sphere",time: 3.days.from_now, description:"Bridgeport Arts", artist_id: 7)
+Event.create(address:"4802 N Broadway St, Chicago, IL 60640", name:"The Green Mill",time: 3.days.from_now, description:"Improvisational Jazz", artist_id: 8)
+Event.create(address:"2042 W 21st St; Chicago, Illinois 60608", name:"Eco",time: 3.days.from_now, description:"Rooftop show", artist_id: 2)
+Event.create(address:"1501 W Randolph St, Chicago, IL 60606", name:"Union Park", time: 3.days.from_now, description:"Pitchfork Music Festival", artist_id: 9)
+Event.create(address:"300 N Central Park Ave, Chicago, IL 60624", name:"Garfield Park Conservatory", time: 3.days.from_now, description: "FootWork Live", artist_id: 10)
+
 
 
 ArtistEvent.create(artist_id:1, event_id:1)
@@ -73,6 +86,9 @@ ArtistEvent.create(artist_id:6, event_id:5)
 ArtistEvent.create(artist_id:7, event_id:6)
 ArtistEvent.create(artist_id:8, event_id:7)
 ArtistEvent.create(artist_id:2, event_id:8)
+ArtistEvent.create(artist_id:9, event_id:9)
+ArtistEvent.create(artist_id:10, event_id:10)
+
 
 UserArtist.create(user_id:1, artist_id:1)
 UserArtist.create(user_id:1, artist_id:2)
